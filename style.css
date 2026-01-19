@@ -1,0 +1,26 @@
+.team-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Mobile: immagine sopra e “hero” */
+@media (max-width: 575.98px) {
+  .team-img {
+    height: 220px;
+  }
+  .font-size {
+    font-size: 16px;
+  }
+}
+
+/* Da sm in su: immagine a sinistra che riempie in altezza */
+@media (min-width: 576px) {
+  .team-img {
+    height: 100%;
+    min-height: 140px;
+  }
+  .font-size {
+    font-size: 18px;
+  }
+}
