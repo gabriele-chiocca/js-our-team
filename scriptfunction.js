@@ -16,7 +16,7 @@ function generateTeamCardMember(member) {
                 <img src="./${img}" alt="member-image" class="team-img" />
               </div>
               <div class="col text-light m-auto">
-                <h2 class="fs-3">${name}</h2>
+                <h2 class="fs-3 font-size">${name}</h2>
                 <p>${role}</p>
                 <p>${email}</p>
               </div>
