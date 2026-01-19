@@ -54,6 +54,16 @@ Aggiungere un form di aggiunta membri che permetta di visualizzare il nuovo memb
 
 const teamContainerElement = document.getElementById('row-containerteam');
 
+// Const dei valori
+
+const emailcompiledtaked = document.getElementById('mail-input');
+
+const namecompiledtaked = document.getElementById('nome-input');
+
+const ruolocompiledtaked = document.getElementById('ruolo-input');
+
+const imgcompiledtaked = document.getElementById('image-input');
+
 for (const member of teamMembers) {
   const cardhtml = generateTeamCardMember(member);
 
@@ -82,3 +92,39 @@ function generateTeamCardMember(member) {
 
   return cardhtml;
 }
+
+const forminput = document.getElementById('form-add-member');
+
+forminput.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // Value
+
+  const emailcompiled = emailcompiledtaked.value.trim();
+
+  const namecompiled = namecompiledtaked.value;
+
+  const rolecompiled = ruolocompiledtaked.value;
+
+  const imgcompiled = imgcompiledtaked.value.trim();
+
+  if (emailcompiled && namecompiled && rolecompiled && imgcompiled) {
+    const newMember = {
+      name: namecompiled,
+      role: rolecompiled,
+      email: emailcompiled,
+      img: imgcompiled,
+    };
+
+    teamMembers.push(newMember);
+
+    const newcardhtml = generateTeamCardMember(newMember);
+
+    teamContainerElement.innerHTML += newcardhtml;
+
+    emailcompiledtaked.value = '';
+    namecompiledtaked.value = '';
+    ruolocompiledtaked.value = '';
+    imgcompiledtaked.value = '';
+  }
+});
