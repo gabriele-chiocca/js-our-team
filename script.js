@@ -51,3 +51,26 @@ Aggiungere un form di aggiunta membri che permetta di visualizzare il nuovo memb
 
 
 */
+
+const teamContainerElement = document.getElementById('row-containerteam');
+
+for (const member of teamMembers) {
+  const cardhtml = `
+  <div class="col-4 gy-5">
+        <!-- Prima Card -->
+          <div class="card bg-dark">
+            <div class="row">
+              <div class="col">
+                <img src="./${member.img}" alt="member-image" />
+              </div>
+              <div class="col text-light m-auto">
+                <h2>${member.name}</h2>
+                <p>${member.role}</p>
+                <p>${member.email}</p>
+              </div>
+            </div>
+          </div>
+        </div>`;
+
+  teamContainerElement.innerHTML += cardhtml;
+}
