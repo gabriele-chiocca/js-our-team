@@ -64,7 +64,7 @@ function generateTeamCardMember(member) {
   const { img, name, role, email } = member;
 
   const cardhtml = `
-  <div class="col-4 gy-5">
+  <div class="col-4 gy-4">
         <!-- Prima Card -->
           <div class="card bg-dark">
             <div class="row">
